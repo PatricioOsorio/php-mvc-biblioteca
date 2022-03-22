@@ -10,7 +10,7 @@ class Sesiones extends Controller
   {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $data = [
-        "title" => "Iniciar sesion",
+        "title" => "Libreria \"Barco de papel\"",
         "usuario" => $_POST["user"],
         "contrasenia" => $_POST["password"],
         "error" => false
@@ -28,7 +28,7 @@ class Sesiones extends Controller
       }
     } else {
       $data = [
-        "title" => "Iniciar sesion",
+        "title" => "Libreria \"Barco de papel\"",
       ];
 
       $this->loadView("sesiones/index", $data);

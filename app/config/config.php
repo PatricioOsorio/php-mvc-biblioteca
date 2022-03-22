@@ -9,7 +9,7 @@ define('RUTA_URL', 'http://localhost/development/school/biblioteca/');
 define('NOMBRE_SITIO', 'Libreria - Barco de papel');
 
 // Configuracion de acceso Base de Datos
-define('DB_HOST', 'localhost:3307');
+define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_DATABASE', 'biblioteca_pato');

@@ -29,7 +29,7 @@
           <a class="btn btn-warning" href="<?php echo RUTA_URL ?>prestamos/editar/<?php echo $prestamo->id_prestamo ?>">
             <i class="fas fa-edit"></i> Modificar
           </a>
-          <a class="btn btn-danger" href="<?php echo RUTA_URL ?>pretamos/borrar/<?php echo $prestamo->id_prestamo ?>">
+          <a class="btn btn-danger" href="<?php echo RUTA_URL ?>prestamos/borrar/<?php echo $prestamo->id_prestamo ?>">
             <i class="fas fa-trash"></i> Eliminar
           </a>
         </td>
