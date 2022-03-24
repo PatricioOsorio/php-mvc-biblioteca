@@ -9,7 +9,7 @@ class Libros extends Controller
 
   public function index()
   {
-    // Obtener los usuarios
+    // Obtener los libros
     $books = $this->librosModel->getLibros();
 
     $data = [
@@ -21,9 +21,11 @@ class Libros extends Controller
 
   public function agregar()
   {
+    $data = ["title" => "Agregar libro"];
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $data = [
-        "title" => "Agregar libro",
+        ...$data,
         "titulo" => trim($_POST["titulo"]),
         "no_paginas" => trim($_POST["no_paginas"]),
         "nombre_autor" => trim($_POST["nombre_autor"]),
@@ -35,19 +37,16 @@ class Libros extends Controller
         die("algo salio mal");
       }
     } else {
-      $data = [
-        "title" => "Agregar libro",
-      ];
-
       $this->loadView("libros/agregar", $data);
     }
   }
 
   public function editar($id)
   {
+    $data = ["title" => "Editar libro"]
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $data = [
-        "title" => "Editar libro",
+        ...$data,
         "id_libro" => $id,
         "titulo" => trim($_POST["titulo"]),
         "no_paginas" => trim($_POST["no_paginas"]),
@@ -64,7 +63,7 @@ class Libros extends Controller
       $book = $this->librosModel->getLibro($id);
 
       $data = [
-        "title" => "Editar libro",
+        ...$data,
         "id_libro" => $book->id_libro,
         "titulo" => $book->titulo,
         "no_paginas" => $book->no_paginas,
@@ -81,6 +80,8 @@ class Libros extends Controller
     // Obtener informacion de usuario desde el modelo
     $book = $this->librosModel->getLibro($id);
 
+    $data = ["title" => "Borrar libro"]
+
     $data = [
       "title" => "Borrar libro",
       "id_libro" => $book->id_libro,
@@ -92,7 +93,6 @@ class Libros extends Controller
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $data = [
-        // "title" => "Borrar usuario",
         "id_libro" => $id,
       ];
       if ($this->librosModel->borrarLibro($data)) {
