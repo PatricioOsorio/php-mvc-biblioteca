@@ -43,7 +43,8 @@ class Libros extends Controller
 
   public function editar($id)
   {
-    $data = ["title" => "Editar libro"]
+    $data = ["title" => "Editar libro"];
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $data = [
         ...$data,
@@ -80,10 +81,10 @@ class Libros extends Controller
     // Obtener informacion de usuario desde el modelo
     $book = $this->librosModel->getLibro($id);
 
-    $data = ["title" => "Borrar libro"]
+    $data = ["title" => "Borrar libro"];
 
     $data = [
-      "title" => "Borrar libro",
+      ...$data,
       "id_libro" => $book->id_libro,
       "titulo" => $book->titulo,
       "no_paginas" => $book->no_paginas,

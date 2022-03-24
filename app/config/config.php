@@ -5,7 +5,7 @@ define('RUTA_APP', dirname(dirname(__FILE__)));
 // Ruta url
 define('RUTA_URL', 'http://localhost/development/school/biblioteca/');
 
-// Ruta url
+// Nombre del sitio web
 define('NOMBRE_SITIO', 'Libreria - Barco de papel');
 
 // Configuracion de acceso Base de Datos
